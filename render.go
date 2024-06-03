@@ -4966,7 +4966,7 @@ type GetOwnersResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
-		Cursor *[]byte `json:"cursor,omitempty"`
+		Cursor *string `json:"cursor,omitempty"`
 		Owner  *Owner  `json:"owner,omitempty"`
 	}
 	JSON401 *N401Unauthorized
@@ -5338,7 +5338,7 @@ type GetDeploysResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
-		Cursor *[]byte `json:"cursor,omitempty"`
+		Cursor *string `json:"cursor,omitempty"`
 		Deploy *Deploy `json:"deploy,omitempty"`
 	}
 	JSON401 *N401Unauthorized
@@ -5432,7 +5432,7 @@ type GetEnvVarsForServiceResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
-		Cursor *[]byte `json:"cursor,omitempty"`
+		Cursor *string `json:"cursor,omitempty"`
 		EnvVar *EnvVar `json:"envVar,omitempty"`
 	}
 	JSON401 *N401Unauthorized
@@ -5465,7 +5465,7 @@ type UpdateEnvVarsForServiceResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
-		Cursor *[]byte `json:"cursor,omitempty"`
+		Cursor *string `json:"cursor,omitempty"`
 		EnvVar *EnvVar `json:"envVar,omitempty"`
 	}
 	JSON400 *N400BadRequest
@@ -5532,7 +5532,7 @@ type ListJobResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
-		Cursor *[]byte `json:"cursor,omitempty"`
+		Cursor *string `json:"cursor,omitempty"`
 		Job    *Job    `json:"job,omitempty"`
 	}
 	JSON400 *N400BadRequest
@@ -5649,7 +5649,7 @@ type GetRoutesResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *[]struct {
-		Cursor *[]byte `json:"cursor,omitempty"`
+		Cursor *string `json:"cursor,omitempty"`
 		Routes *Route  `json:"routes,omitempty"`
 	}
 	JSON401 *N401Unauthorized
@@ -6036,7 +6036,7 @@ func ParseGetOwnersResponse(rsp *http.Response) (*GetOwnersResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
-			Cursor *[]byte `json:"cursor,omitempty"`
+			Cursor *string `json:"cursor,omitempty"`
 			Owner  *Owner  `json:"owner,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -7032,7 +7032,7 @@ func ParseGetDeploysResponse(rsp *http.Response) (*GetDeploysResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
-			Cursor *[]byte `json:"cursor,omitempty"`
+			Cursor *string `json:"cursor,omitempty"`
 			Deploy *Deploy `json:"deploy,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -7288,7 +7288,7 @@ func ParseGetEnvVarsForServiceResponse(rsp *http.Response) (*GetEnvVarsForServic
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
-			Cursor *[]byte `json:"cursor,omitempty"`
+			Cursor *string `json:"cursor,omitempty"`
 			EnvVar *EnvVar `json:"envVar,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -7373,7 +7373,7 @@ func ParseUpdateEnvVarsForServiceResponse(rsp *http.Response) (*UpdateEnvVarsFor
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
-			Cursor *[]byte `json:"cursor,omitempty"`
+			Cursor *string `json:"cursor,omitempty"`
 			EnvVar *EnvVar `json:"envVar,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -7550,7 +7550,7 @@ func ParseListJobResponse(rsp *http.Response) (*ListJobResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
-			Cursor *[]byte `json:"cursor,omitempty"`
+			Cursor *string `json:"cursor,omitempty"`
 			Job    *Job    `json:"job,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -7839,7 +7839,7 @@ func ParseGetRoutesResponse(rsp *http.Response) (*GetRoutesResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest []struct {
-			Cursor *[]byte `json:"cursor,omitempty"`
+			Cursor *string `json:"cursor,omitempty"`
 			Routes *Route  `json:"routes,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {

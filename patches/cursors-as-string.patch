@@ -1,0 +1,84 @@
+diff --git a/openapi.yaml b/openapi.yaml
+index c458f10..bea19ec 100644
+--- a/openapi.yaml
++++ b/openapi.yaml
+@@ -53,7 +53,6 @@ paths:
+                       $ref: '#/components/schemas/owner'
+                     cursor:
+                       type: string
+-                      format: byte
+         '401':
+           $ref: '#/components/responses/401Unauthorized'
+         '406':
+@@ -205,7 +204,6 @@ paths:
+                       $ref: '#/components/schemas/service'
+                     cursor:
+                       type: string
+-                      format: byte
+         '401':
+           $ref: '#/components/responses/401Unauthorized'
+         '406':
+@@ -377,7 +375,6 @@ paths:
+                       $ref: '#/components/schemas/deploy'
+                     cursor:
+                       type: string
+-                      format: byte
+         '401':
+           $ref: '#/components/responses/401Unauthorized'
+         '403':
+@@ -493,7 +490,6 @@ paths:
+                       $ref: '#/components/schemas/envVar'
+                     cursor:
+                       type: string
+-                      format: byte
+         '401':
+           $ref: '#/components/responses/401Unauthorized'
+         '403':
+@@ -535,7 +531,6 @@ paths:
+                       $ref: '#/components/schemas/envVar'
+                     cursor:
+                       type: string
+-                      format: byte
+         '400':
+           $ref: '#/components/responses/400BadRequest'
+         '401':
+@@ -609,7 +604,6 @@ paths:
+                       $ref: '#/components/schemas/header'
+                     cursor:
+                       type: string
+-                      format: byte
+         '401':
+           $ref: '#/components/responses/401Unauthorized'
+         '403':
+@@ -682,7 +676,6 @@ paths:
+                       $ref: '#/components/schemas/route'
+                     cursor:
+                       type: string
+-                      format: byte
+         '401':
+           $ref: '#/components/responses/401Unauthorized'
+         '403':
+@@ -764,7 +757,6 @@ paths:
+                       $ref: '#/components/schemas/customDomain'
+                     cursor:
+                       type: string
+-                      format: byte
+         '400':
+           $ref: '#/components/responses/400BadRequest'
+         '401':
+@@ -1107,7 +1099,6 @@ paths:
+                       $ref: '#/components/schemas/job'
+                     cursor:
+                       type: string
+-                      format: byte
+                       example: "abc123"
+         '400':
+           $ref: '#/components/responses/400BadRequest'
+@@ -1204,7 +1195,6 @@ components:
+       description: Cursor to begin retrieving entries for this query
+       schema:
+         type: string
+-        format: byte
+     customDomainIdOrNameParam:
+       name: customDomainIdOrName
+       in: path

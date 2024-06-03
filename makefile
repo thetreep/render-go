@@ -1,5 +1,5 @@
 patch:
-	git apply ./patches/add-env-vars-patch.patch
+	git apply ./patches/*.patch
 
 generate:
 	oapi-codegen -package render openapi.yaml > render.go
